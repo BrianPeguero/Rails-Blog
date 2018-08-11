@@ -10,16 +10,7 @@
 
 <!--To show all the comments related to the article-->
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-    <p>
-        <strong>Commenter: </strong>
-        <%= comment.commenter %>
-    </p>
-    <p>
-        <strong>Comment: </strong>
-        <%= comment.body %>
-    </p>
-<%end%>
+<%= render @article.comments %>
 
 <!--To creat a comment related to the article-->
 <h2>Add a Comment</h2>
@@ -38,7 +29,7 @@
     <p>
         <%= form.submit%>
     </p>
-<%end%>
+<% end %>
 
 <%= link_to "Edit", edit_article_path(@article) %>
 <%= link_to "Back", articles_path %>
