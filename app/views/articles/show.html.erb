@@ -1,35 +1,55 @@
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
+<div class="jumbotron">
+    <div class="container border p-3">
+        <p class="border p-3">
+            <strong>Title:</strong>
+            </br>
+            <%= @article.title %>
+        </p>
 
-<p>
-    <strong>Text:</strong>
-    <%= @article.text %>
-</p>
+        <p class="border p-3">
+            <strong>Text:</strong>
+            </br>
+            <%= @article.text %>
+        </p>
+        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+    </div>
 
-<!--To show all the comments related to the article-->
-<h2>Comments</h2>
-<%= render @article.comments %>
+    </br>
+    <hr></hr>
+    </br>
 
-<!--To creat a comment related to the article-->
-<h2>Add a Comment</h2>
+    <div class = "container">
+        <!--To show all the comments related to the article-->
+        <h4>Comments</h4>
+        <%= render @article.comments %>
+    </div>
 
-<%= form_with(model: [@article.comments.build], local: true) do |form| %>
-    <p>
-        <%= form.label :commenter %>
-        <%= form.text_field :commenter%>
-    </p>
+    </br>
 
-    <p>
-        <%= form.label :body %>
-        <%= form.text_field :body%>
-    </p>
-    
-    <p>
-        <%= form.submit%>
-    </p>
-<% end %>
+    <div class = "container">
+        <!--To creat a comment related to the article-->
+        <h4>Add a Comment</h4>
 
-<%= link_to "Edit", edit_article_path(@article) %>
-<%= link_to "Back", articles_path %>
+        <%= form_with(model: [ @article, @article.comments.build], local: true) do |form| %>
+            <p>
+                <%= form.label :commenter %>
+                </br>
+                <%= form.text_field :commenter%>
+            </p>
+
+            <p>
+                <%= form.label :body %>
+                </br>
+                <%= form.text_field :body%>
+            </p>
+                
+            <p>
+                <%= form.submit %>
+            </p>
+        <% end %>
+    </div>
+
+    <div class="container">
+        <%= link_to "Back", articles_path, class: "btn btn-primary" %>
+    </div>
+</div>

@@ -13,4 +13,33 @@
  *= require_tree .
  *= require_self
  */
-@import "boostrap";
+@import "bootstrap";
+
+html{
+    height: auto;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+body{
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    padding-top: 10%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    height: 100%;
+    width: 100%;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#207cca+0,3b679e+36,1e2c4f+99 */
+    background: #207cca; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #207cca 0%, #3b679e 36%, #1e2c4f 99%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #207cca 0%,#3b679e 36%,#1e2c4f 99%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #207cca 0%,#3b679e 36%,#1e2c4f 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#1e2c4f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    background-repeat: no-repeat;
+}
